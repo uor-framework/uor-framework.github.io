@@ -68,7 +68,7 @@ anchor = "smart"
 [languages]
 [languages.en]
 title = "UOR Framework"
-description = "A Docsy example site"
+description = "Universal Object Reference Sig"
 languageName ="English"
 weight = 1
 
