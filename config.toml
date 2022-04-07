@@ -200,3 +200,17 @@ enable = false
   [[module.imports]]
     path = "github.com/google/docsy/dependencies"
     disable = false
+
+[security]
+enableInlineShortcodes = false
+
+[security.exec]
+allow = ["^dart-sass-embedded$", "^go$", "^npx$", "^postcss$", "^asciidoctor$"]
+osEnv = ["(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM|RUBYLIB)$"]
+
+[security.funcs]
+getenv = ["^HUGO_"]
+
+[security.http]
+methods = ["(?i)GET|POST"]
+urls = [".*"]
