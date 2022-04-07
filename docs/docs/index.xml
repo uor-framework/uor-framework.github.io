@@ -30,6 +30,25 @@
     </item>
     
     <item>
+      <title>Docs: Object Registry as Storage</title>
+      <link>/docs/technology/oras/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/technology/oras/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Describe ORAS OCI object storage application and reference implementation relevance to UOR.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Describe related arts.&lt;/p&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Bed and Chair Metrics</title>
       <link>/docs/tasks/beds/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
@@ -694,6 +713,22 @@ bar := &amp;#34;foo&amp;#34;;
     </item>
     
     <item>
+      <title>Docs: Universal Object Reference</title>
+      <link>/docs/technology/uor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/technology/uor/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Overview of UOR, the sig approach, governing body, and outcome standards approach.&lt;/p&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Launching Ponycopters</title>
       <link>/docs/tasks/ponycopters/launching-ponycopters/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
@@ -1039,6 +1074,22 @@ bar := &amp;#34;foo&amp;#34;;
 &lt;p&gt;validate&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: UOR Shim Compatibility Layer</title>
+      <link>/docs/technology/uor-shim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/technology/uor-shim/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Describe how uor-shim(s) enable legacy compatibility.&lt;/p&gt;
 &lt;/div&gt;
 
       </description>
@@ -1712,6 +1763,22 @@ bar := &amp;#34;foo&amp;#34;;
     </item>
     
     <item>
+      <title>Docs: Universal Runtime</title>
+      <link>/docs/technology/ur/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/technology/ur/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Describe how Universal Runtime enables executing programmable objects (UROs) and integrates contextual awareness based on uro spec attribute awareness.&lt;/p&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Another Task</title>
       <link>/docs/tasks/task/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
@@ -2354,6 +2421,22 @@ bar := &amp;#34;foo&amp;#34;;
     </item>
     
     <item>
+      <title>Docs: Universal Runtime Interface</title>
+      <link>/docs/technology/uri/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/technology/uri/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Describe how Universal Runtime Interface enables UR Clients to orchestrate object runtime execution.&lt;/p&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Efficiency &amp; Scalability</title>
       <link>/docs/criteria/efficient/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2364,6 +2447,41 @@ bar := &amp;#34;foo&amp;#34;;
         
         &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Describe efficiency kpi(s) here.&lt;/p&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Universal Runtime Client</title>
+      <link>/docs/technology/urc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/technology/urc/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Describe how URO and URI enable UR Clients object actions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;publish&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;query&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;retrieve&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;validate&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;execute&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 
       </description>

@@ -1,0 +1,11 @@
+---
+title: "Object Registry as Storage"
+linkTitle: "ORAS"
+weight: 1
+description: >
+  Object Registry as Storage.
+---
+
+Describe ORAS OCI object storage application and reference implementation relevance to UOR.
+
+Describe related arts.

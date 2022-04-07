@@ -1,0 +1,9 @@
+---
+title: "Universal Object Reference"
+linkTitle: "UOR"
+weight: 2
+description: >
+  Compatibility layer for non uor-native legacy support.
+---
+
+Overview of UOR, the sig approach, governing body, and outcome standards approach.

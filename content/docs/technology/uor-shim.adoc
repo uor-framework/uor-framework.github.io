@@ -1,0 +1,9 @@
+---
+title: "UOR Shim Compatibility Layer"
+linkTitle: "UOR Shim"
+weight: 3
+description: >
+  Compatibility layer for non uor-native legacy support.
+---
+
+Describe how uor-shim(s) enable legacy compatibility.

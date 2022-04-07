@@ -1,0 +1,9 @@
+---
+title: "Technologies"
+linkTitle: "Technologies"
+weight: 4
+description: >
+  UOR Technology Focus Areas
+---
+
+UOR Sigs are broken into dedicated groups based on related outcome patterns. Functions that sensibly belong in a shared spec are governed by a dedicated special interest group for that function.

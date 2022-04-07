@@ -169,17 +169,21 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 enable = false
 
 [params.links]
-# End user relevant links. These will show up on left side of footer and in the community page if you have one.
-[[params.links.developer]]
-  name ="Twitter"
-  url = "https://twitter.com/UorSig"
-  icon = "fab fa-twitter"
-  desc = "@UorSig on Twitter!"
 [[params.links.developer]]
   name = "GitHub"
   url = "https://github.com/uor-framework"
   icon = "fab fa-github"
   desc = "Development takes place here!"
+[[params.links.developer]]
+  name = "UOR Mailing List"
+  url = "https://groups.google.com/g/uor-framework"
+  icon = "fa fa-envelope"
+  desc = "Join the mailing list!"
+[[params.links.developer]]
+  name ="Twitter"
+  url = "https://twitter.com/UorSig"
+  icon = "fab fa-twitter"
+  desc = "@UorSig on Twitter!"
 [[params.links.developer]]
   name = "Slack"
   url = "https://app.slack.com/client/T08PSQ7BQ/C034YMT1P41"
