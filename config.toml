@@ -3,8 +3,8 @@ title = "UOR Sig"
 contentDir = "content"
 
 # Language settings
-#defaultContentLanguage = "en"
-#defaultContentLanguageInSubdir = false
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 # Useful when translating.
 # enableMissingTranslationPlaceholders = false
 
@@ -114,7 +114,7 @@ version = "0.0"
 url_latest_version = "https://uor-framework.github.io/"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/uor-framework/uor-framework"
+github_repo = "https://github.com/uor-framework/uor-framework.github.io"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 github_project_repo = "https://github.com/uor-framework/uor-framework"
 
