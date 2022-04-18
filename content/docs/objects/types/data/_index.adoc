@@ -1,0 +1,20 @@
+---
+title: "Data"
+linkTitle: "Data"
+weight: 1
+description: >
+  'Data' Data Types
+---
+
+Explore 'object' class data types.
+
+
+Examples: +
+
+* File
+** Spec
+** Image
+** Video
+** Manifest
+* Executable
+* Container Image

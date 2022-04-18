@@ -1,7 +1,7 @@
 ---
 title: "Technologies"
-linkTitle: "Technologies"
-weight: 4
+linkTitle: "Components"
+weight: 3
 description: >
   UOR Technology Focus Areas
 ---

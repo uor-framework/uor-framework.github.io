@@ -1,0 +1,37 @@
+---
+title: "Anatomy"
+linkTitle: "Anatomy"
+weight: 2
+description: >
+  Anatomy of a UOR Object
+---
+
+UOR Objects are assembled datasets of the following components.
+
+* Data
+* Attributes
+** Label
+** Affinity
+** Taint
+** Dependency
+** Association
+** Ownership
+** Mode
+* Specification
+** Instruction
+** Index
+** Matrix
+** Schema
+* Attestation Manifest
+** Git / Source
+** Signature
+** Commit
+** Verification
+
+The Data component is the primary actionable content of the UOR Object. +
+
+The Attributes component is a set of attributes that describe the data's properties and corelation anchors. +
+
+The Specification component describes the methods of reading or acting on the data and dependencies. +
+
+The Attestation Manifest component is a set of statements that attest to the data's origins and integrity. +

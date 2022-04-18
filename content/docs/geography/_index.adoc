@@ -1,0 +1,15 @@
+---
+title: "Geography"
+linkTitle: "Geography"
+weight: 7
+description: >
+    UOR Use Cases
+---
+
+Example:
+
+* Cloud
+* Edge
+* Endpoint
+* IOT
+* Airgap
