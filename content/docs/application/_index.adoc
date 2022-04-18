@@ -1,0 +1,25 @@
+---
+title: "Application"
+linkTitle: "Application"
+weight: 8
+description: >
+    UOR Use Case Scenarios
+---
+
+Explore use case scenarios
+
+Examples:
+
+* AI/ML
+* Data Lakes
+* Data Oceans
+* Compute
+** System Identity
+** Provisioning
+** Enrollment
+** Assignment
+** Authorization
+** Authentication
+* Identity
+** Identity Provider Services (IDP)
+** Object Level Role Based Access & Control (zero trust data access)

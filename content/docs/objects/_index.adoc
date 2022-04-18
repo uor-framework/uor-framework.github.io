@@ -1,0 +1,9 @@
+---
+title: "Objects"
+linkTitle: "Objects"
+weight: 5
+description: >
+  UOR Objects
+---
+
+Objects are the fundamental core of the UOR Framework. Objects can be static files, dynamic pointers, or programmable data.
