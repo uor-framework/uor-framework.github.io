@@ -1,0 +1,33 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UOR Framework – Architecture</title>
+    <link>/docs/architecture/</link>
+    <description>Recent content in Architecture on UOR Framework</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/architecture/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Technologies</title>
+      <link>/docs/architecture/components/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/architecture/components/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;UOR Sigs are broken into dedicated groups based on related outcome patterns. Functions that sensibly belong in a shared spec are governed by a dedicated special interest group for that function.&lt;/p&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
