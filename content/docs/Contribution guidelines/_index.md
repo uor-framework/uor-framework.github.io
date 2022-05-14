@@ -14,7 +14,6 @@ If you've just spotted something you'd like to change while using the docs, Docs
 
 1. Click **Edit this page** in the top right hand corner of the page.
 1. If you don't already have an up to date fork of the project repo, you are prompted to get one - click **Fork this repository and propose changes** or **Update your Fork** to get an up to date version of the project to edit. The appropriate page in your fork is displayed in edit mode.
-1. Follow the rest of the [Quick start with Netlify](#quick-start-with-netlify) process above to make, preview, and propose your changes.
 
 ## Previewing your changes locally
 
