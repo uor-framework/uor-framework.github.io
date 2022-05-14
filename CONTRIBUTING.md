@@ -1,7 +1,34 @@
 # How to Contribute
 
-We'd love to accept your patches and contributions to this project. There are
-just a few small guidelines you need to follow.
+Of course we welcome contributions to the UOR Framework Documentation!
+
+To get started, clone the repository and start a local build of the site.
+
+For this you will need:
+* git cli
+* docker-compose
+
+```sh
+git clone https://github.com/uor-framework/uor-framework.github.io.git
+cd uor-framework.github.io
+```
+
+To start with podman:
+
+```sh
+podman play kube podman.yaml
+podman logs --follow uor-framework-hugo
+```
+
+To start with docker-compose:
+
+```sh
+docker-compose up
+```
+
+You can now reach your local build of the docs at http://localhost:1313
+
+----------------------------------------
 
 ## Contributor License Agreement
 

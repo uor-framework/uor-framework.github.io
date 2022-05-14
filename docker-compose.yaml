@@ -1,13 +1,12 @@
 version: "3.3"
-
 services:
-
   site:
-    image: docsy/docsy-example
-    build:
-      context: .
-    command: server
-    ports:
-      - "1313:1313"
+    image: ghcr.io/uor-framework/hugo
     volumes:
       - .:/src
+    ports:
+      - "1313:1313"
+#   command: sleep infinity
+#   build:
+#     context: .
+#     dockerfile: Containerfile
