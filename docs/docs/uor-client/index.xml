@@ -1,0 +1,33 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UOR Framework – UOR Client</title>
+    <link>/docs/uor-client/</link>
+    <description>Recent content in UOR Client on UOR Framework</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/uor-client/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Command Line Interface</title>
+      <link>/docs/uor-client/cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/uor-client/cli/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;UOR Client CLI documentation goes here&lt;/p&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

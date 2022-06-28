@@ -30,25 +30,6 @@
     </item>
     
     <item>
-      <title>Docs: Object Registry as Storage</title>
-      <link>/docs/architecture/components/oras/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/architecture/components/oras/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Describe ORAS OCI object storage application and reference implementation relevance to UOR.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Describe related arts.&lt;/p&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Knowable</title>
       <link>/docs/criteria/knowable/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -87,22 +68,6 @@
     </item>
     
     <item>
-      <title>Docs: Universal Object Reference</title>
-      <link>/docs/architecture/components/uor/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/architecture/components/uor/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Overview of UOR, the sig approach, governing body, and outcome standards approach.&lt;/p&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Retrievable</title>
       <link>/docs/criteria/retrieve/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -135,22 +100,6 @@
 &lt;p&gt;validate&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: UOR Shim Compatibility Layer</title>
-      <link>/docs/architecture/components/uor-shim/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/architecture/components/uor-shim/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Describe how uor-shim(s) enable legacy compatibility.&lt;/p&gt;
 &lt;/div&gt;
 
       </description>
@@ -198,22 +147,6 @@
     </item>
     
     <item>
-      <title>Docs: Universal Runtime</title>
-      <link>/docs/architecture/components/ur/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/architecture/components/ur/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Describe how Universal Runtime enables executing programmable objects (UROs) and integrates contextual awareness based on uro spec attribute awareness.&lt;/p&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Web 2.0 Compatible</title>
       <link>/docs/criteria/compatible/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -224,22 +157,6 @@
         
         &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;Describe compatibility of UOR implementation with current web technologies.&lt;/p&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Universal Runtime Interface</title>
-      <link>/docs/architecture/components/uri/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/architecture/components/uri/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Describe how Universal Runtime Interface enables UR Clients to orchestrate object runtime execution.&lt;/p&gt;
 &lt;/div&gt;
 
       </description>
@@ -279,41 +196,6 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Secure&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Universal Runtime Client</title>
-      <link>/docs/architecture/components/urc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/architecture/components/urc/</guid>
-      <description>
-        
-        
-        &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Describe how URO and URI enable UR Clients object actions.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;ulist&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;publish&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;query&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;retrieve&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;validate&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;execute&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
