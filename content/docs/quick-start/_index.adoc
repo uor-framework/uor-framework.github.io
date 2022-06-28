@@ -1,0 +1,18 @@
+---
+title: "Getting Started"
+linkTitle: "Getting Started"
+weight: 2
+categories: ["quickstart", "uor"]
+tags: ["edu","docs"]
+description: >
+  Getting Started using UOR Client.
+---
+
+== Universal Object Reference
+:toc:
+:toclevels: 3
+:sectnumlevels: 3
+
+magical commands
+
+  asdf

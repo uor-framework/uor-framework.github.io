@@ -1,0 +1,18 @@
+---
+title: "FAQ"
+linkTitle: "FAQ"
+weight: 3
+categories: ["quickstart", "uor"]
+tags: ["edu","docs"]
+description: >
+  Frequently Asked Questions
+---
+
+== Universal Object Reference
+:toc:
+:toclevels: 3
+:sectnumlevels: 3
+
+magical commands
+
+  asdf

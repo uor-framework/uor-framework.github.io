@@ -1,7 +1,7 @@
 ---
 title: "Outcome based Criteria"
 linkTitle: "Criteria"
-weight: 3
+weight: 6
 description: >
   Criteria for outcome and result based measures of success.
 ---

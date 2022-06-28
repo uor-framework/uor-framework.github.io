@@ -3,11 +3,16 @@ title: "Contribution Guidelines"
 linkTitle: "Contribution Guidelines"
 weight: 1000
 description: >
-  How to contribute to the docs
+  How to contribute to the UOR docs
 ---
 
 These docs are built with [Hugo](https://gohugo.io/) and the [Docsy theme](https://github.com/google/docsy). Pages are written in Markdown and HTML.
 
+## Adding or ammending content:
+
+Docs are written in markdown and asciidoc formats consistent with [Docsy](https://www.docsy.dev/)
+
+All content can be found in the `content/docs/` path of this repository.
 ## Updating a single page
 
 If you've just spotted something you'd like to change while using the docs, Docsy has a shortcut for you:
@@ -41,6 +46,7 @@ docker-compose up
 Open the docs locally at [http://localhost:1313](http://localhost:1313)
 
 {{% /pageinfo %}}
+
 
 
 

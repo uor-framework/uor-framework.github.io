@@ -1,9 +1,0 @@
----
-title: "Universal Runtime"
-linkTitle: "UR"
-weight: 4
-description: >
-  Spec & Attribute aware Object Runtime specification.
----
-
-Describe how Universal Runtime enables executing programmable objects (UROs) and integrates contextual awareness based on uro spec attribute awareness.
