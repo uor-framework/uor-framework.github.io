@@ -373,7 +373,7 @@ $ skopeo inspect --raw --tls-verify=false docker://localhost:5000/uor-framework/
 }
 ----
 
-Notice how each layer representing the collection content now has user defined attributes associated to them. In addition, the `fish.jpg` and `aloha.txt` resources that are contained in the `content` directory have the additional annotation `content: 'true'` as they matched the wildcard pattern as defined in the `DataSetConfiguration`. Defining attributes is easy and unlocks the various mays that you will be able to interact with the content.
+Notice how each layer representing the collection content now has user defined attributes associated to them. In addition, the `fish.jpg` and `aloha.txt` resources that are contained in the `content` directory have the additional annotation `content: 'true'` as they matched the wildcard pattern as defined in the `DataSetConfiguration`. Defining attributes is easy and unlocks the various ways that you will be able to interact with the content.
 
 === Filtering Content by Attributes
 
