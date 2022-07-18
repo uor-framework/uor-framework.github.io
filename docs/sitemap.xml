@@ -2,56 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/docs/uor-client/cli/</loc>
-    <lastmod>2022-06-27T22:32:56-07:00</lastmod>
-  </url><url>
-    <loc>/docs/criteria/extensible/</loc>
-    <lastmod>2022-04-07T12:49:16-07:00</lastmod>
-  </url><url>
-    <loc>/docs/overview/</loc>
-    <lastmod>2022-04-10T00:03:41-05:00</lastmod>
-  </url><url>
-    <loc>/docs/uor-client/cli/data/</loc>
-    <lastmod>2022-06-27T22:32:56-07:00</lastmod>
-  </url><url>
     <loc>/docs/quick-start/</loc>
     <lastmod>2022-06-29T00:58:05-05:00</lastmod>
-  </url><url>
-    <loc>/docs/criteria/knowable/</loc>
-    <lastmod>2022-04-07T12:49:16-07:00</lastmod>
   </url><url>
     <loc>/docs/faq/</loc>
     <lastmod>2022-06-28T12:13:33-06:00</lastmod>
   </url><url>
-    <loc>/docs/criteria/retrieve/</loc>
-    <lastmod>2022-04-07T12:49:16-07:00</lastmod>
-  </url><url>
-    <loc>/docs/example-use-cases/</loc>
-    <lastmod>2022-06-28T12:13:33-06:00</lastmod>
-  </url><url>
-    <loc>/docs/criteria/distribute/</loc>
-    <lastmod>2022-04-07T12:49:16-07:00</lastmod>
-  </url><url>
-    <loc>/docs/uor-client/</loc>
-    <lastmod>2022-06-27T22:32:56-07:00</lastmod>
-  </url><url>
-    <loc>/docs/criteria/compatible/</loc>
-    <lastmod>2022-04-07T12:49:16-07:00</lastmod>
-  </url><url>
-    <loc>/docs/criteria/</loc>
-    <lastmod>2022-06-27T22:32:56-07:00</lastmod>
-  </url><url>
-    <loc>/docs/criteria/sustainable/</loc>
-    <lastmod>2022-04-17T23:57:58-07:00</lastmod>
-  </url><url>
-    <loc>/docs/related/</loc>
-    <lastmod>2022-04-17T23:57:58-07:00</lastmod>
-  </url><url>
     <loc>/docs/</loc>
     <lastmod>2022-06-27T22:32:56-07:00</lastmod>
-  </url><url>
-    <loc>/docs/glossary/</loc>
-    <lastmod>2022-04-17T23:57:58-07:00</lastmod>
   </url><url>
     <loc>/docs/contribution-guidelines/</loc>
     <lastmod>2022-06-27T22:32:56-07:00</lastmod>
