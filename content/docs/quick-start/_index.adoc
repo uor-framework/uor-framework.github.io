@@ -101,26 +101,43 @@ uor-workspace
 1 directory, 3 files
 ----
 
-=== Publishing a Collection
+=== Building a Collection
 
-With the desired set of files contained within the `uor-workspace` directory, the next step is to publishing a collection. This process performs three actions:
+With the desired set of files contained within the `uor-workspace` directory, the next step is to build a collection. This process performs three actions:
 
 1. Discovers all content within the workspace
 2. Produces an OCI artifact based on the content of the collection
-3. Publishes the artifact to a remote repository.
+3. Store the artifact in a local build cache. 
 
-To publish the collection to a remote registry, let's say that an instance of `registry:2` was running on our local machine and there is the desire to publish the collection to `localhost:5000/uor-framework/getting-started:latest`.
+The location of the build cache can be set by exporting the environment variable `UOR_CACHE`. The default location is `~/.uor/cache`.
 
-Using the `push` subcommand, execute the following to publish the workspace to a remote registry. Additional options are also available for specifying the location of a file containing authentication details or communicating with an insecure or HTTP based registry if necessary. 
+To build and store the collection, let's say there is the desire to eventually publish the collection to `localhost:5000/uor-framework/getting-started:latest`.
+
+Using the `build` subcommand, execute the following to build and store the workspace:
 
 [source, shell]
 ----
-$ client push uor-workspace localhost:5000/uor-framework/getting-started:latest
+$ client build uor-workspace localhost:5000/uor-framework/getting-started:latest
 
 WARN[0000] reference for unknown type: text/plain; charset=utf-8 
 WARN[0000] reference for unknown type: text/plain; charset=utf-8 
 WARN[0000] reference for unknown type: image/jpeg       
 WARN[0000] reference for unknown type: application/vnd.uor.config.v1+json 
+INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db32561eea73c76e9 built with reference name localhost:5000/uor-framework/getting-started:latest 
+----
+
+Do not be concerned about the `WARN` messages in the output of the _build_ execution. These are being emitted by the underlying link:https://oras.land[ORAS] library to client utilizes.
+
+=== Publishing a Collection
+
+To publish the collection to a remote registry, let's say that an instance of `registry:2` was running on our local machine and there is the desire to publish the stored collection to `localhost:5000/uor-framework/getting-started:latest`.
+
+Using the `push` subcommand, execute the following to publish the stored collection to a remote registry. Additional options are also available for specifying the location of a file containing authentication details or communicating with an insecure or HTTP based registry if necessary. 
+
+[source, shell]
+----
+$ client push localhost:5000/uor-framework/getting-started:latest
+
 INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db32561eea73c76e9 published to localhost:5000/uor-framework/getting-started:latest 
 ----
 
@@ -311,18 +328,27 @@ EOF
 
 Associating a `DataSetConfiguration` to a collection is achieved when pushing a workspace to a remote registry by specifying the `--dsconfig` flag and referencing the location of the resource.
 
-=== Publishing a Collection With Attributes
+=== Building a Collection With Attributes
 
-Publish a new tag of the collection called `dsconfig` with the additional metadata associated to the content by executing the following command:
+Store a new tag of the collection called `dsconfig` with the additional metadata associated to the content by executing the following command:
 
 [source, shell]
 ----
-$ client push --dsconfig=dataset-configuration.yaml uor-workspace localhost:5000/uor-framework/getting-started:dsconfig
+$ client build --dsconfig=dataset-configuration.yaml uor-workspace localhost:5000/uor-framework/getting-started:dsconfig
 
 WARN[0000] reference for unknown type: text/plain; charset=utf-8 
 WARN[0000] reference for unknown type: text/plain; charset=utf-8 
 WARN[0000] reference for unknown type: image/jpeg       
 WARN[0000] reference for unknown type: application/vnd.uor.config.v1+json 
+INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db32561eea73c76e9 built with reference name localhost:5000/uor-framework/getting-started:latest 
+----
+
+Publish the collection to the remote registry.
+
+[source, shell]
+----
+$ client push localhost:5000/uor-framework/getting-started:dsconfig
+
 INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db32561eea73c76e9 published to localhost:5000/uor-framework/getting-started:latest 
 ----
 

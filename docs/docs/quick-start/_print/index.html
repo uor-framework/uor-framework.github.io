@@ -288,9 +288,9 @@ uor-workspace
 </div>
 </div>
 <div class="sect2">
-<h3 id="_publishing_a_collection">Publishing a Collection</h3>
+<h3 id="_building_a_collection">Building a Collection</h3>
 <div class="paragraph">
-<p>With the desired set of files contained within the <code>uor-workspace</code> directory, the next step is to publishing a collection. This process performs three actions:</p>
+<p>With the desired set of files contained within the <code>uor-workspace</code> directory, the next step is to build a collection. This process performs three actions:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -301,24 +301,46 @@ uor-workspace
 <p>Produces an OCI artifact based on the content of the collection</p>
 </li>
 <li>
-<p>Publishes the artifact to a remote repository.</p>
+<p>Store the artifact in a local build cache.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>To publish the collection to a remote registry, let’s say that an instance of <code>registry:2</code> was running on our local machine and there is the desire to publish the collection to <code>localhost:5000/uor-framework/getting-started:latest</code>.</p>
+<p>The location of the build cache can be set by exporting the environment variable <code>UOR_CACHE</code>. The default location is <code>~/.uor/cache</code>.</p>
 </div>
 <div class="paragraph">
-<p>Using the <code>push</code> subcommand, execute the following to publish the workspace to a remote registry. Additional options are also available for specifying the location of a file containing authentication details or communicating with an insecure or HTTP based registry if necessary.</p>
+<p>To build and store the collection, let’s say there is the desire to eventually publish the collection to <code>localhost:5000/uor-framework/getting-started:latest</code>.</p>
+</div>
+<div class="paragraph">
+<p>Using the <code>build</code> subcommand, execute the following to build and store the workspace:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">$ client push uor-workspace localhost:5000/uor-framework/getting-started:latest
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ client build uor-workspace localhost:5000/uor-framework/getting-started:latest
 
 WARN[0000] reference for unknown type: text/plain; charset=utf-8
 WARN[0000] reference for unknown type: text/plain; charset=utf-8
 WARN[0000] reference for unknown type: image/jpeg
 WARN[0000] reference for unknown type: application/vnd.uor.config.v1+json
+INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db32561eea73c76e9 built with reference name localhost:5000/uor-framework/getting-started:latest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Do not be concerned about the <code>WARN</code> messages in the output of the <em>build</em> execution. These are being emitted by the underlying <a href="https://oras.land">ORAS</a> library to client utilizes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_publishing_a_collection">Publishing a Collection</h3>
+<div class="paragraph">
+<p>To publish the collection to a remote registry, let’s say that an instance of <code>registry:2</code> was running on our local machine and there is the desire to publish the stored collection to <code>localhost:5000/uor-framework/getting-started:latest</code>.</p>
+</div>
+<div class="paragraph">
+<p>Using the <code>push</code> subcommand, execute the following to publish the stored collection to a remote registry. Additional options are also available for specifying the location of a file containing authentication details or communicating with an insecure or HTTP based registry if necessary.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ client push localhost:5000/uor-framework/getting-started:latest
+
 INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db32561eea73c76e9 published to localhost:5000/uor-framework/getting-started:latest</code></pre>
 </div>
 </div>
@@ -552,18 +574,28 @@ EOF</code></pre>
 <p>Associating a <code>DataSetConfiguration</code> to a collection is achieved when pushing a workspace to a remote registry by specifying the <code>--dsconfig</code> flag and referencing the location of the resource.</p>
 </div>
 <div class="sect2">
-<h3 id="_publishing_a_collection_with_attributes">Publishing a Collection With Attributes</h3>
+<h3 id="_building_a_collection_with_attributes">Building a Collection With Attributes</h3>
 <div class="paragraph">
-<p>Publish a new tag of the collection called <code>dsconfig</code> with the additional metadata associated to the content by executing the following command:</p>
+<p>Store a new tag of the collection called <code>dsconfig</code> with the additional metadata associated to the content by executing the following command:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">$ client push --dsconfig=dataset-configuration.yaml uor-workspace localhost:5000/uor-framework/getting-started:dsconfig
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ client build --dsconfig=dataset-configuration.yaml uor-workspace localhost:5000/uor-framework/getting-started:dsconfig
 
 WARN[0000] reference for unknown type: text/plain; charset=utf-8
 WARN[0000] reference for unknown type: text/plain; charset=utf-8
 WARN[0000] reference for unknown type: image/jpeg
 WARN[0000] reference for unknown type: application/vnd.uor.config.v1+json
+INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db32561eea73c76e9 built with reference name localhost:5000/uor-framework/getting-started:latest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Publish the collection to the remote registry.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ client push localhost:5000/uor-framework/getting-started:dsconfig
+
 INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db32561eea73c76e9 published to localhost:5000/uor-framework/getting-started:latest</code></pre>
 </div>
 </div>
