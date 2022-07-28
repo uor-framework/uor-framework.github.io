@@ -73,24 +73,24 @@
 &lt;h2 id=&#34;_uor_client&#34;&gt;UOR Client&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The primary method for interacting with UOR resources is by using the &lt;a href=&#34;https://github.com/uor-framework/client/releases&#34;&gt;Client&lt;/a&gt;. This CLI based utility includes capabilities to support assembling, publishing, retrieval and discovery.&lt;/p&gt;
+&lt;p&gt;The primary method for interacting with UOR resources is by using the &lt;a href=&#34;https://github.com/uor-framework/uor-client-go/releases&#34;&gt;Client (&lt;code&gt;uor-go-client&lt;/code&gt;)&lt;/a&gt;. This CLI based utility includes capabilities to support assembling, publishing, retrieval and discovery.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The Client can be installed from the &lt;a href=&#34;https://github.com/uor-framework/client/releases&#34;&gt;releases&lt;/a&gt; page. Download the archive that corresponds with your operating system. Extract the archive and and add the binary to your &lt;code&gt;$PATH&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Installation can be achieved by obtaining the latest release from the &lt;a href=&#34;https://github.com/uor-framework/uor-client-go/releases&#34;&gt;releases&lt;/a&gt; page. Download the archive that corresponds with your operating system. Extract the archive and and add the binary to your &lt;code&gt;$PATH&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Confirm the installation was successful by invoking the client:&lt;/p&gt;
+&lt;p&gt;Confirm the installation was successful by invoking &lt;code&gt;uor-client-go&lt;/code&gt; :&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ client version&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ uor-client-go version&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Details related to the client will be presented if installation is successful.&lt;/p&gt;
+&lt;p&gt;Details related to the &lt;em&gt;uor-client-go&lt;/em&gt; will be presented if installation is successful.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Now that the client has been installed and configured, you are ready to start interacting with UOR content.&lt;/p&gt;
+&lt;p&gt;Now that the &lt;em&gt;uor-client-go&lt;/em&gt; has been installed and configured, you are ready to start interacting with UOR content.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -98,7 +98,7 @@
 &lt;h2 id=&#34;_introduction_to_collections&#34;&gt;Introduction to Collections&lt;/h2&gt;
 &lt;div class=&#34;sectionbody&#34;&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;The primary purpose of the &lt;em&gt;client&lt;/em&gt; is to facilitate the interaction with &lt;em&gt;Collections&lt;/em&gt;. A Collection is a set of content that is bundled together and stored as an OCI artifact. The individual resources within the artifact are decorated with additional metadata to enable filtering, discovery and retrieval. The following sections will discuss the lifecycle of a collection including mechanisms for interacting with the content.&lt;/p&gt;
+&lt;p&gt;The primary purpose of the &lt;em&gt;uor-client-go&lt;/em&gt; is to facilitate the interaction with &lt;em&gt;Collections&lt;/em&gt;. A Collection is a set of content that is bundled together and stored as an OCI artifact. The individual resources within the artifact are decorated with additional metadata to enable filtering, discovery and retrieval. The following sections will discuss the lifecycle of a collection including mechanisms for interacting with the content.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -141,7 +141,7 @@ $ pushd uor-workspace&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ mkdir content
 $ cd content
 $ echo &amp;#39;aloha&amp;#39; &amp;gt; aloha.txt
-$ curl -LsO https://github.com/uor-framework/client/raw/main/testdata/fish.jpg
+$ curl -LsO https://github.com/uor-framework/uor-client-go/raw/main/testdata/fish.jpg
 $ popd&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -188,7 +188,7 @@ uor-workspace
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ client push uor-workspace localhost:5000/uor-framework/getting-started:latest
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ uor-client-go push uor-workspace localhost:5000/uor-framework/getting-started:latest
 
 WARN[0000] reference for unknown type: text/plain; charset=utf-8
 WARN[0000] reference for unknown type: text/plain; charset=utf-8
@@ -198,13 +198,13 @@ INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db3256
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Do not be concerned about the &lt;code&gt;WARN&lt;/code&gt; messages in the output of the &lt;em&gt;push&lt;/em&gt; execution. These are being emitted by the underlying &lt;a href=&#34;https://oras.land&#34;&gt;ORAS&lt;/a&gt; library to client utilizes.&lt;/p&gt;
+&lt;p&gt;Do not be concerned about the &lt;code&gt;WARN&lt;/code&gt; messages in the output of the &lt;em&gt;push&lt;/em&gt; execution. These are being emitted by the underlying &lt;a href=&#34;https://oras.land&#34;&gt;ORAS&lt;/a&gt; library the uor-client-go utilizes.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_exploring_the_published_artifact&#34;&gt;Exploring the Published Artifact&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;With the collection published, lets explore the contents of the OCI artifact that the client produced. There are a number of tools that can be used to investigate the composition of resources within an OCI registry. For readability, we will use &lt;code&gt;skopeo&lt;/code&gt; and &lt;code&gt;jq&lt;/code&gt;, however one could simply use &lt;code&gt;curl`&lt;/code&gt; to produce the same results.&lt;/p&gt;
+&lt;p&gt;With the collection published, lets explore the contents of the OCI artifact that the uor-client-go produced. There are a number of tools that can be used to investigate the composition of resources within an OCI registry. For readability, we will use &lt;code&gt;skopeo&lt;/code&gt; and &lt;code&gt;jq&lt;/code&gt;, however one could simply use &lt;code&gt;curl`&lt;/code&gt; to produce the same results.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;First, review the contents of the &lt;a href=&#34;https://oras.land/cli/3_manifest_config/&#34;&gt;manifest&lt;/a&gt; to view each of the layers that were published. The &lt;code&gt;skopeo inspect&lt;/code&gt; subcommand with the &lt;code&gt;--raw&lt;/code&gt; flag will retrieve the contents of the manifest. The result can be piped to &lt;code&gt;jq&lt;/code&gt; to improve the readability. Note, the &lt;code&gt;--tls-verify&lt;/code&gt; flag also needs to be supplied in this instance as communication with the remote registry will utilize HTTP.&lt;/p&gt;
@@ -278,7 +278,7 @@ INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db3256
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;One can easily determine that the content contains a picture due to the &lt;em&gt;mediaType&lt;/em&gt; &lt;code&gt;image/jpeg&lt;/code&gt;. In addition, the client also adds the relative location within the workspace to the &lt;code&gt;org.opencontainers.image.title&lt;/code&gt; annotation of the layer representing the primary value for the content. This is used to reconstruct the assets as the artifact as a whole is retrieved. The topic of reassembly will be covered in the next section.&lt;/p&gt;
+&lt;p&gt;One can easily determine that the content contains a picture due to the &lt;em&gt;mediaType&lt;/em&gt; &lt;code&gt;image/jpeg&lt;/code&gt;. In addition, the uor-client-go also adds the relative location within the workspace to the &lt;code&gt;org.opencontainers.image.title&lt;/code&gt; annotation of the layer representing the primary value for the content. This is used to reconstruct the assets as the artifact as a whole is retrieved. The topic of reassembly will be covered in the next section.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;sect2&#34;&gt;
@@ -292,11 +292,11 @@ INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db3256
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Then, using the &lt;code&gt;pull&lt;/code&gt; subcommand of the client, specify the reference of the artifact (collection) published to the registry previously along with the location locally the contents should be saved within. To recreate the previously deleted &lt;code&gt;uor-workspace&lt;/code&gt; directory with the contents of the collection, execute the following command:&lt;/p&gt;
+&lt;p&gt;Then, using the &lt;code&gt;pull&lt;/code&gt; subcommand of the uor-client-go, specify the reference of the artifact (collection) published to the registry previously along with the location locally the contents should be saved within. To recreate the previously deleted &lt;code&gt;uor-workspace&lt;/code&gt; directory with the contents of the collection, execute the following command:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ client pull localhost:5000/uor-framework/getting-started:latest uor-workspace
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ uor-client-go pull localhost:5000/uor-framework/getting-started:latest uor-workspace
 
 INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db32561eea73c76e9 from localhost:5000/uor-framework/getting-started:latest pulled to uor-workspace&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -330,7 +330,7 @@ uor-workspace
 &lt;p&gt;By default, the UOR client attaches an annotation to each resource within a collection to associate the relative location of the content within a workspace using the key &lt;code&gt;org.opencontainers.image.title&lt;/code&gt;. This annotation is one of the well know &lt;a href=&#34;https://github.com/opencontainers/image-spec/blob/main/annotations.md&#34;&gt;Predefined Keys&lt;/a&gt; as defined by the Open Container Initiative.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;One of the key features of UOR is the ability to &lt;em&gt;reference&lt;/em&gt; content (hence the name Universal Object Reference) amongst a variety of different content types. This is accomplished, you guessed it, through attributes associated to each piece of content, and in this case, annotations on the layer. Aside from the default values that is produced by the UOR client, end users have the ability to define their own sets of attributes. This is accomplished using a &lt;code&gt;DataSetConfiguration&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;One of the key features of UOR is the ability to &lt;em&gt;reference&lt;/em&gt; content (hence the name Universal Object Reference) amongst a variety of different content types. This is accomplished, you guessed it, through attributes associated to each piece of content, and in this case, annotations on the layer. Aside from the default values that is produced by the uor-client-go, end users have the ability to define their own sets of attributes. This is accomplished using a &lt;code&gt;DataSetConfiguration&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;A &lt;code&gt;DataSetConfiguration&lt;/code&gt; allows for a set of attributes to be associated with one or more resources within a collection and is represented in the following format:&lt;/p&gt;
@@ -433,7 +433,7 @@ EOF&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ client push --dsconfig=dataset-configuration.yaml uor-workspace localhost:5000/uor-framework/getting-started:dsconfig
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ uor-client-go push --dsconfig=dataset-configuration.yaml uor-workspace localhost:5000/uor-framework/getting-started:dsconfig
 
 WARN[0000] reference for unknown type: text/plain; charset=utf-8
 WARN[0000] reference for unknown type: text/plain; charset=utf-8
@@ -497,7 +497,7 @@ INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db3256
 &lt;div class=&#34;sect2&#34;&gt;
 &lt;h3 id=&#34;_filtering_content_by_attributes&#34;&gt;Filtering Content by Attributes&lt;/h3&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
-&lt;p&gt;Defining attributes within a collection enables the ability to restrict the content that is retrieved from a collection in a remote registry. The presence of the additional annotations does not change the default functionality of the &lt;code&gt;pull&lt;/code&gt; subcommand within the client. However, it does provide the capability to specify the &lt;code&gt;--attributes&lt;/code&gt; flag which allows for a set of key/value pairs to be defined which will attempt to match any of the annotation within the content.&lt;/p&gt;
+&lt;p&gt;Defining attributes within a collection enables the ability to restrict the content that is retrieved from a collection in a remote registry. The presence of the additional annotations does not change the default functionality of the &lt;code&gt;pull&lt;/code&gt; subcommand within the uor-client-go. However, it does provide the capability to specify the &lt;code&gt;--attributes&lt;/code&gt; flag which allows for a set of key/value pairs to be defined which will attempt to match any of the annotation within the content.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;paragraph&#34;&gt;
 &lt;p&gt;For example, within the previously published collection, instead of retrieving all three files, let’s say that we are only concerned with assets that are classified as &amp;#34;content&amp;#34;. Since the attribute &lt;code&gt;content: &amp;#39;true&amp;#39;&lt;/code&gt; was defined on the &lt;code&gt;fish.jpg&lt;/code&gt; and &lt;code&gt;aloha.txt&lt;/code&gt; files, we can filter out only those resources when retrieving the collection.&lt;/p&gt;
@@ -507,7 +507,7 @@ INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db3256
 &lt;/div&gt;
 &lt;div class=&#34;listingblock&#34;&gt;
 &lt;div class=&#34;content&#34;&gt;
-&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ client pull --attributes=content=&amp;#39;true&amp;#39; localhost:5000/uor-framework/getting-started:dsconfig uor-workspace-filtered
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ uor-client-go pull --attributes=content=&amp;#39;true&amp;#39; localhost:5000/uor-framework/getting-started:dsconfig uor-workspace-filtered
 INFO[0000] Artifact sha256:bc94fe2c03d48e3deb2a736f9d4b9b61411d1070df844c10e6002196f099189d from localhost:5000/uor-framework/getting-started:dsconfig pulled to uor-workspace-filtered&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;

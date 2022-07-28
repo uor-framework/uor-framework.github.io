@@ -21,19 +21,19 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Getting Started | UOR Framework</title>
-<meta name="description" content="Getting Started using UOR Client.
+<meta name="description" content="Getting Started using the UOR Client.
 ">
 <meta property="og:title" content="Getting Started" />
-<meta property="og:description" content="Getting Started using UOR Client.
+<meta property="og:description" content="Getting Started using the UOR Client.
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/quick-start/" /><meta property="og:site_name" content="UOR Framework" />
 
 <meta itemprop="name" content="Getting Started">
-<meta itemprop="description" content="Getting Started using UOR Client.
+<meta itemprop="description" content="Getting Started using the UOR Client.
 "><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Getting Started"/>
-<meta name="twitter:description" content="Getting Started using UOR Client.
+<meta name="twitter:description" content="Getting Started using the UOR Client.
 "/>
 
 
@@ -227,7 +227,7 @@
             
 <div class="td-content">
 	<h1>Getting Started</h1>
-  <div class="lead">Getting Started using UOR Client.</div>
+  <div class="lead">Getting Started using the UOR Client.</div>
 	<header class="article-meta">
 		
 
@@ -318,24 +318,24 @@
 <h2 id="_uor_client">UOR Client</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The primary method for interacting with UOR resources is by using the <a href="https://github.com/uor-framework/client/releases">Client</a>. This CLI based utility includes capabilities to support assembling, publishing, retrieval and discovery.</p>
+<p>The primary method for interacting with UOR resources is by using the <a href="https://github.com/uor-framework/uor-client-go/releases">Client (<code>uor-go-client</code>)</a>. This CLI based utility includes capabilities to support assembling, publishing, retrieval and discovery.</p>
 </div>
 <div class="paragraph">
-<p>The Client can be installed from the <a href="https://github.com/uor-framework/client/releases">releases</a> page. Download the archive that corresponds with your operating system. Extract the archive and and add the binary to your <code>$PATH</code>.</p>
+<p>Installation can be achieved by obtaining the latest release from the <a href="https://github.com/uor-framework/uor-client-go/releases">releases</a> page. Download the archive that corresponds with your operating system. Extract the archive and and add the binary to your <code>$PATH</code>.</p>
 </div>
 <div class="paragraph">
-<p>Confirm the installation was successful by invoking the client:</p>
+<p>Confirm the installation was successful by invoking <code>uor-client-go</code> :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">$ client version</code></pre>
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ uor-client-go version</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Details related to the client will be presented if installation is successful.</p>
+<p>Details related to the <em>uor-client-go</em> will be presented if installation is successful.</p>
 </div>
 <div class="paragraph">
-<p>Now that the client has been installed and configured, you are ready to start interacting with UOR content.</p>
+<p>Now that the <em>uor-client-go</em> has been installed and configured, you are ready to start interacting with UOR content.</p>
 </div>
 </div>
 </div>
@@ -343,7 +343,7 @@
 <h2 id="_introduction_to_collections">Introduction to Collections</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The primary purpose of the <em>client</em> is to facilitate the interaction with <em>Collections</em>. A Collection is a set of content that is bundled together and stored as an OCI artifact. The individual resources within the artifact are decorated with additional metadata to enable filtering, discovery and retrieval. The following sections will discuss the lifecycle of a collection including mechanisms for interacting with the content.</p>
+<p>The primary purpose of the <em>uor-client-go</em> is to facilitate the interaction with <em>Collections</em>. A Collection is a set of content that is bundled together and stored as an OCI artifact. The individual resources within the artifact are decorated with additional metadata to enable filtering, discovery and retrieval. The following sections will discuss the lifecycle of a collection including mechanisms for interacting with the content.</p>
 </div>
 </div>
 </div>
@@ -386,7 +386,7 @@ $ pushd uor-workspace</code></pre>
 <pre class="highlight"><code class="language-shell" data-lang="shell">$ mkdir content
 $ cd content
 $ echo &#39;aloha&#39; &gt; aloha.txt
-$ curl -LsO https://github.com/uor-framework/client/raw/main/testdata/fish.jpg
+$ curl -LsO https://github.com/uor-framework/uor-client-go/raw/main/testdata/fish.jpg
 $ popd</code></pre>
 </div>
 </div>
@@ -433,7 +433,7 @@ uor-workspace
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">$ client push uor-workspace localhost:5000/uor-framework/getting-started:latest
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ uor-client-go push uor-workspace localhost:5000/uor-framework/getting-started:latest
 
 WARN[0000] reference for unknown type: text/plain; charset=utf-8
 WARN[0000] reference for unknown type: text/plain; charset=utf-8
@@ -443,13 +443,13 @@ INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db3256
 </div>
 </div>
 <div class="paragraph">
-<p>Do not be concerned about the <code>WARN</code> messages in the output of the <em>push</em> execution. These are being emitted by the underlying <a href="https://oras.land">ORAS</a> library to client utilizes.</p>
+<p>Do not be concerned about the <code>WARN</code> messages in the output of the <em>push</em> execution. These are being emitted by the underlying <a href="https://oras.land">ORAS</a> library the uor-client-go utilizes.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_exploring_the_published_artifact">Exploring the Published Artifact</h3>
 <div class="paragraph">
-<p>With the collection published, lets explore the contents of the OCI artifact that the client produced. There are a number of tools that can be used to investigate the composition of resources within an OCI registry. For readability, we will use <code>skopeo</code> and <code>jq</code>, however one could simply use <code>curl`</code> to produce the same results.</p>
+<p>With the collection published, lets explore the contents of the OCI artifact that the uor-client-go produced. There are a number of tools that can be used to investigate the composition of resources within an OCI registry. For readability, we will use <code>skopeo</code> and <code>jq</code>, however one could simply use <code>curl`</code> to produce the same results.</p>
 </div>
 <div class="paragraph">
 <p>First, review the contents of the <a href="https://oras.land/cli/3_manifest_config/">manifest</a> to view each of the layers that were published. The <code>skopeo inspect</code> subcommand with the <code>--raw</code> flag will retrieve the contents of the manifest. The result can be piped to <code>jq</code> to improve the readability. Note, the <code>--tls-verify</code> flag also needs to be supplied in this instance as communication with the remote registry will utilize HTTP.</p>
@@ -523,7 +523,7 @@ INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db3256
 </div>
 </div>
 <div class="paragraph">
-<p>One can easily determine that the content contains a picture due to the <em>mediaType</em> <code>image/jpeg</code>. In addition, the client also adds the relative location within the workspace to the <code>org.opencontainers.image.title</code> annotation of the layer representing the primary value for the content. This is used to reconstruct the assets as the artifact as a whole is retrieved. The topic of reassembly will be covered in the next section.</p>
+<p>One can easily determine that the content contains a picture due to the <em>mediaType</em> <code>image/jpeg</code>. In addition, the uor-client-go also adds the relative location within the workspace to the <code>org.opencontainers.image.title</code> annotation of the layer representing the primary value for the content. This is used to reconstruct the assets as the artifact as a whole is retrieved. The topic of reassembly will be covered in the next section.</p>
 </div>
 </div>
 <div class="sect2">
@@ -537,11 +537,11 @@ INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db3256
 </div>
 </div>
 <div class="paragraph">
-<p>Then, using the <code>pull</code> subcommand of the client, specify the reference of the artifact (collection) published to the registry previously along with the location locally the contents should be saved within. To recreate the previously deleted <code>uor-workspace</code> directory with the contents of the collection, execute the following command:</p>
+<p>Then, using the <code>pull</code> subcommand of the uor-client-go, specify the reference of the artifact (collection) published to the registry previously along with the location locally the contents should be saved within. To recreate the previously deleted <code>uor-workspace</code> directory with the contents of the collection, execute the following command:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">$ client pull localhost:5000/uor-framework/getting-started:latest uor-workspace
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ uor-client-go pull localhost:5000/uor-framework/getting-started:latest uor-workspace
 
 INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db32561eea73c76e9 from localhost:5000/uor-framework/getting-started:latest pulled to uor-workspace</code></pre>
 </div>
@@ -575,7 +575,7 @@ uor-workspace
 <p>By default, the UOR client attaches an annotation to each resource within a collection to associate the relative location of the content within a workspace using the key <code>org.opencontainers.image.title</code>. This annotation is one of the well know <a href="https://github.com/opencontainers/image-spec/blob/main/annotations.md">Predefined Keys</a> as defined by the Open Container Initiative.</p>
 </div>
 <div class="paragraph">
-<p>One of the key features of UOR is the ability to <em>reference</em> content (hence the name Universal Object Reference) amongst a variety of different content types. This is accomplished, you guessed it, through attributes associated to each piece of content, and in this case, annotations on the layer. Aside from the default values that is produced by the UOR client, end users have the ability to define their own sets of attributes. This is accomplished using a <code>DataSetConfiguration</code>.</p>
+<p>One of the key features of UOR is the ability to <em>reference</em> content (hence the name Universal Object Reference) amongst a variety of different content types. This is accomplished, you guessed it, through attributes associated to each piece of content, and in this case, annotations on the layer. Aside from the default values that is produced by the uor-client-go, end users have the ability to define their own sets of attributes. This is accomplished using a <code>DataSetConfiguration</code>.</p>
 </div>
 <div class="paragraph">
 <p>A <code>DataSetConfiguration</code> allows for a set of attributes to be associated with one or more resources within a collection and is represented in the following format:</p>
@@ -678,7 +678,7 @@ EOF</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">$ client push --dsconfig=dataset-configuration.yaml uor-workspace localhost:5000/uor-framework/getting-started:dsconfig
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ uor-client-go push --dsconfig=dataset-configuration.yaml uor-workspace localhost:5000/uor-framework/getting-started:dsconfig
 
 WARN[0000] reference for unknown type: text/plain; charset=utf-8
 WARN[0000] reference for unknown type: text/plain; charset=utf-8
@@ -742,7 +742,7 @@ INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db3256
 <div class="sect2">
 <h3 id="_filtering_content_by_attributes">Filtering Content by Attributes</h3>
 <div class="paragraph">
-<p>Defining attributes within a collection enables the ability to restrict the content that is retrieved from a collection in a remote registry. The presence of the additional annotations does not change the default functionality of the <code>pull</code> subcommand within the client. However, it does provide the capability to specify the <code>--attributes</code> flag which allows for a set of key/value pairs to be defined which will attempt to match any of the annotation within the content.</p>
+<p>Defining attributes within a collection enables the ability to restrict the content that is retrieved from a collection in a remote registry. The presence of the additional annotations does not change the default functionality of the <code>pull</code> subcommand within the uor-client-go. However, it does provide the capability to specify the <code>--attributes</code> flag which allows for a set of key/value pairs to be defined which will attempt to match any of the annotation within the content.</p>
 </div>
 <div class="paragraph">
 <p>For example, within the previously published collection, instead of retrieving all three files, let’s say that we are only concerned with assets that are classified as &#34;content&#34;. Since the attribute <code>content: &#39;true&#39;</code> was defined on the <code>fish.jpg</code> and <code>aloha.txt</code> files, we can filter out only those resources when retrieving the collection.</p>
@@ -752,7 +752,7 @@ INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db3256
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">$ client pull --attributes=content=&#39;true&#39; localhost:5000/uor-framework/getting-started:dsconfig uor-workspace-filtered
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ uor-client-go pull --attributes=content=&#39;true&#39; localhost:5000/uor-framework/getting-started:dsconfig uor-workspace-filtered
 INFO[0000] Artifact sha256:bc94fe2c03d48e3deb2a736f9d4b9b61411d1070df844c10e6002196f099189d from localhost:5000/uor-framework/getting-started:dsconfig pulled to uor-workspace-filtered</code></pre>
 </div>
 </div>

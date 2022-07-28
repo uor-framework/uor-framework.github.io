@@ -5,7 +5,7 @@ weight: 2
 categories: ["quickstart", "uor"]
 tags: ["edu","docs"]
 description: >
-  Getting Started using UOR Client.
+  Getting Started using the UOR Client.
 ---
 
 == Universal Object Reference
@@ -31,24 +31,24 @@ The following tools are required in order to complete the steps illustrated in t
 
 == UOR Client
 
-The primary method for interacting with UOR resources is by using the link:https://github.com/uor-framework/client/releases[Client]. This CLI based utility includes capabilities to support assembling, publishing, retrieval and discovery.
+The primary method for interacting with UOR resources is by using the link:https://github.com/uor-framework/uor-client-go/releases[Client (`uor-go-client`)]. This CLI based utility includes capabilities to support assembling, publishing, retrieval and discovery.
 
-The Client can be installed from the link:https://github.com/uor-framework/client/releases[releases] page. Download the archive that corresponds with your operating system. Extract the archive and and add the binary to your `$PATH`.
+Installation can be achieved by obtaining the latest release from the link:https://github.com/uor-framework/uor-client-go/releases[releases] page. Download the archive that corresponds with your operating system. Extract the archive and and add the binary to your `$PATH`.
 
-Confirm the installation was successful by invoking the client:
+Confirm the installation was successful by invoking `uor-client-go` :
 
 [source, shell]
 ----
-$ client version
+$ uor-client-go version
 ----
 
-Details related to the client will be presented if installation is successful.
+Details related to the _uor-client-go_ will be presented if installation is successful.
 
-Now that the client has been installed and configured, you are ready to start interacting with UOR content.
+Now that the _uor-client-go_ has been installed and configured, you are ready to start interacting with UOR content.
 
 == Introduction to Collections
 
-The primary purpose of the _client_ is to facilitate the interaction with _Collections_. A Collection is a set of content that is bundled together and stored as an OCI artifact. The individual resources within the artifact are decorated with additional metadata to enable filtering, discovery and retrieval. The following sections will discuss the lifecycle of a collection including mechanisms for interacting with the content. 
+The primary purpose of the _uor-client-go_ is to facilitate the interaction with _Collections_. A Collection is a set of content that is bundled together and stored as an OCI artifact. The individual resources within the artifact are decorated with additional metadata to enable filtering, discovery and retrieval. The following sections will discuss the lifecycle of a collection including mechanisms for interacting with the content. 
 
 == Interacting with a Collection
 
@@ -82,7 +82,7 @@ Next, create a directory called `content` which will contain two files: a text f
 $ mkdir content
 $ cd content
 $ echo 'aloha' > aloha.txt
-$ curl -LsO https://github.com/uor-framework/client/raw/main/testdata/fish.jpg
+$ curl -LsO https://github.com/uor-framework/uor-client-go/raw/main/testdata/fish.jpg
 $ popd
 ----
 
@@ -115,7 +115,7 @@ Using the `push` subcommand, execute the following to publish the workspace to a
 
 [source, shell]
 ----
-$ client push uor-workspace localhost:5000/uor-framework/getting-started:latest
+$ uor-client-go push uor-workspace localhost:5000/uor-framework/getting-started:latest
 
 WARN[0000] reference for unknown type: text/plain; charset=utf-8 
 WARN[0000] reference for unknown type: text/plain; charset=utf-8 
@@ -124,11 +124,11 @@ WARN[0000] reference for unknown type: application/vnd.uor.config.v1+json
 INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db32561eea73c76e9 published to localhost:5000/uor-framework/getting-started:latest 
 ----
 
-Do not be concerned about the `WARN` messages in the output of the _push_ execution. These are being emitted by the underlying link:https://oras.land[ORAS] library to client utilizes.
+Do not be concerned about the `WARN` messages in the output of the _push_ execution. These are being emitted by the underlying link:https://oras.land[ORAS] library the uor-client-go utilizes.
 
 === Exploring the Published Artifact
 
-With the collection published, lets explore the contents of the OCI artifact that the client produced. There are a number of tools that can be used to investigate the composition of resources within an OCI registry. For readability, we will use `skopeo` and `jq`, however one could simply use `curl`` to produce the same results.
+With the collection published, lets explore the contents of the OCI artifact that the uor-client-go produced. There are a number of tools that can be used to investigate the composition of resources within an OCI registry. For readability, we will use `skopeo` and `jq`, however one could simply use `curl`` to produce the same results.
 
 First, review the contents of the link:https://oras.land/cli/3_manifest_config/[manifest] to view each of the layers that were published. The `skopeo inspect` subcommand with the `--raw` flag will retrieve the contents of the manifest. The result can be piped to `jq` to improve the readability. Note, the `--tls-verify` flag also needs to be supplied in this instance as communication with the remote registry will utilize HTTP.  
 
@@ -191,7 +191,7 @@ Each item within the workspace becomes a layer within the artifact. By inspectin
 }
 ----
 
-One can easily determine that the content contains a picture due to the _mediaType_ `image/jpeg`. In addition, the client also adds the relative location within the workspace to the `org.opencontainers.image.title` annotation of the layer representing the primary value for the content. This is used to reconstruct the assets as the artifact as a whole is retrieved. The topic of reassembly will be covered in the next section.
+One can easily determine that the content contains a picture due to the _mediaType_ `image/jpeg`. In addition, the uor-client-go also adds the relative location within the workspace to the `org.opencontainers.image.title` annotation of the layer representing the primary value for the content. This is used to reconstruct the assets as the artifact as a whole is retrieved. The topic of reassembly will be covered in the next section.
 
 === Retrieving a Collection
 
@@ -202,11 +202,11 @@ Just as easy as it was to publish a collection, a collection can be retrieved fr
 $ rm -rf uor-workspace
 ----
 
-Then, using the `pull` subcommand of the client, specify the reference of the artifact (collection) published to the registry previously along with the location locally the contents should be saved within. To recreate the previously deleted `uor-workspace` directory with the contents of the collection, execute the following command:
+Then, using the `pull` subcommand of the uor-client-go, specify the reference of the artifact (collection) published to the registry previously along with the location locally the contents should be saved within. To recreate the previously deleted `uor-workspace` directory with the contents of the collection, execute the following command:
 
 [source, shell]
 ----
-$ client pull localhost:5000/uor-framework/getting-started:latest uor-workspace
+$ uor-client-go pull localhost:5000/uor-framework/getting-started:latest uor-workspace
 
 INFO[0000] Artifact sha256:43c520531d3c1f2dbebb82aaa1e55d19040075772bcdf44db32561eea73c76e9 from localhost:5000/uor-framework/getting-started:latest pulled to uor-workspace 
 ----
@@ -232,7 +232,7 @@ As illustrated by the response, the collection successfully reassembled the cont
 
 By default, the UOR client attaches an annotation to each resource within a collection to associate the relative location of the content within a workspace using the key `org.opencontainers.image.title`. This annotation is one of the well know link:https://github.com/opencontainers/image-spec/blob/main/annotations.md[Predefined Keys] as defined by the Open Container Initiative.
 
-One of the key features of UOR is the ability to _reference_ content (hence the name Universal Object Reference) amongst a variety of different content types. This is accomplished, you guessed it, through attributes associated to each piece of content, and in this case, annotations on the layer. Aside from the default values that is produced by the UOR client, end users have the ability to define their own sets of attributes. This is accomplished using a `DataSetConfiguration`.
+One of the key features of UOR is the ability to _reference_ content (hence the name Universal Object Reference) amongst a variety of different content types. This is accomplished, you guessed it, through attributes associated to each piece of content, and in this case, annotations on the layer. Aside from the default values that is produced by the uor-client-go, end users have the ability to define their own sets of attributes. This is accomplished using a `DataSetConfiguration`.
 
 A `DataSetConfiguration` allows for a set of attributes to be associated with one or more resources within a collection and is represented in the following format:
 
@@ -317,7 +317,7 @@ Publish a new tag of the collection called `dsconfig` with the additional metada
 
 [source, shell]
 ----
-$ client push --dsconfig=dataset-configuration.yaml uor-workspace localhost:5000/uor-framework/getting-started:dsconfig
+$ uor-client-go push --dsconfig=dataset-configuration.yaml uor-workspace localhost:5000/uor-framework/getting-started:dsconfig
 
 WARN[0000] reference for unknown type: text/plain; charset=utf-8 
 WARN[0000] reference for unknown type: text/plain; charset=utf-8 
@@ -377,7 +377,7 @@ Notice how each layer representing the collection content now has user defined a
 
 === Filtering Content by Attributes
 
-Defining attributes within a collection enables the ability to restrict the content that is retrieved from a collection in a remote registry. The presence of the additional annotations does not change the default functionality of the `pull` subcommand within the client. However, it does provide the capability to specify the `--attributes` flag which allows for a set of key/value pairs to be defined which will attempt to match any of the annotation within the content. 
+Defining attributes within a collection enables the ability to restrict the content that is retrieved from a collection in a remote registry. The presence of the additional annotations does not change the default functionality of the `pull` subcommand within the uor-client-go. However, it does provide the capability to specify the `--attributes` flag which allows for a set of key/value pairs to be defined which will attempt to match any of the annotation within the content. 
 
 For example, within the previously published collection, instead of retrieving all three files, let's say that we are only concerned with assets that are classified as "content". Since the attribute `content: 'true'` was defined on the `fish.jpg` and `aloha.txt` files, we can filter out only those resources when retrieving the collection.
 
@@ -385,7 +385,7 @@ Execute the following command to _pull_ the collection containing only "content"
 
 [source, shell]
 ----
-$ client pull --attributes=content='true' localhost:5000/uor-framework/getting-started:dsconfig uor-workspace-filtered
+$ uor-client-go pull --attributes=content='true' localhost:5000/uor-framework/getting-started:dsconfig uor-workspace-filtered
 INFO[0000] Artifact sha256:bc94fe2c03d48e3deb2a736f9d4b9b61411d1070df844c10e6002196f099189d from localhost:5000/uor-framework/getting-started:dsconfig pulled to uor-workspace-filtered 
 ----
 
